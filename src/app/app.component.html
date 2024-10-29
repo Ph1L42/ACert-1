@@ -1,3 +1,6 @@
-<div class="container">
-  <app-movie-item [movie]="movie" />
-</div>
+<!-- For Loop (Alternative: *ngFor) -->
+@for(movie of movies(); track movie.id){
+  <div class="container">
+    <app-movie-item [movie]="movie" />
+  </div>
+}

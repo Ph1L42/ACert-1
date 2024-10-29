@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {MovieItemComponent} from './movie-item/movie-item.component';
 import {Movie} from './model/movie.model';
+import {MoviesService} from "./services/movies.service";
 
 
 @Component({
@@ -13,6 +14,9 @@ import {Movie} from './model/movie.model';
   ]
 })
 export class AppComponent {
+
+  //Injecting Movies from MovieService
+  movies = inject(MoviesService).getMovies()
 
   movie: Movie =  {
     "id": "e80d5a37-620e-4be2-92b9-fb1f5262494f",
